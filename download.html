@@ -5,51 +5,274 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Descargar RegistraSimple</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: Arial, sans-serif; line-height: 1.6; }
-        .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
-        header { background: #2c3e50; color: white; padding: 1rem 0; }
-        nav { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 1.5rem; font-weight: bold; }
-        .nav-links a { color: white; text-decoration: none; margin-left: 2rem; }
-        .download-section { text-align: center; padding: 4rem 0; }
-        .btn { display: inline-block; background: #27ae60; color: white; padding: 15px 40px; text-decoration: none; border-radius: 5px; margin: 1rem; font-size: 1.2rem; }
-        .requirements { background: #f8f9fa; padding: 3rem 0; margin: 2rem 0; }
-        footer { background: #2c3e50; color: white; text-align: center; padding: 2rem 0; margin-top: 2rem; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #F7F9FC 0%, #EFF6FF 100%);
+            color: #1F2937;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            flex: 1;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .logo {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1E3A8A;
+            margin-bottom: 1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.25rem;
+            color: #6B7280;
+        }
+        
+        .download-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+            border: 1px solid #E5E7EB;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .version-info {
+            background: #F0F9FF;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            border-left: 4px solid #1E3A8A;
+        }
+        
+        .download-button {
+            display: inline-block;
+            background: #10B981;
+            color: white;
+            padding: 1.25rem 3rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.25rem;
+            transition: all 0.3s ease;
+            margin: 1rem 0;
+            box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.3);
+        }
+        
+        .download-button:hover {
+            background: #059669;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 10px -1px rgba(16, 185, 129, 0.4);
+        }
+        
+        .instructions {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin: 2rem 0;
+        }
+        
+        .instructions h3 {
+            color: #1E3A8A;
+            margin-bottom: 1rem;
+        }
+        
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: #F8FAFC;
+            border-radius: 8px;
+        }
+        
+        .step-number {
+            background: #1E3A8A;
+            color: white;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .features-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+        
+        .features-list li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .features-list li:before {
+            content: "✓";
+            color: #10B981;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
+        .warning {
+            background: #FEF3C7;
+            border: 1px solid #F59E0B;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            color: #92400E;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #E5E7EB;
+            color: #6B7280;
+        }
+        
+        .back-link {
+            display: inline-block;
+            color: #1E3A8A;
+            text-decoration: none;
+            margin-top: 1rem;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .download-card {
+                padding: 2rem 1rem;
+            }
+            
+            .title {
+                font-size: 2rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">RegistraSimple</div>
-                <div class="nav-links">
-                    <a href="index.html">Inicio</a>
-                    <a href="download.html">Descargar</a>
-                    <a href="privacy-policy.html">Política de Privacidad</a>
-                </div>
-            </nav>
-        </div>
-    </header>
+    <div class="container">
+        <header class="header">
+            <div class="logo">📱</div>
+            <h1 class="title">Descargar RegistraSimple</h1>
+            <p class="subtitle">Versión - Build 1.0.0</p>
+        </header>
 
-    <section class="download-section">
-        <div class="container">
-            <h1>Descargar RegistraSimple</h1>
-            <p>Versión 1.0 - Última actualización: Noviembre 2025</p>
+        <div class="download-card">
             
-            <div style="margin: 3rem 0;">
-                <a href="assets/app.zip" class="btn" download>
-                    📥 Descargar App (Android)
-                </a>
+            <h2 style="color: #1F2937; margin-bottom: 1.5rem;">¡Descarga Gratuita!</h2>
+            <p style="color: #6B7280; margin-bottom: 2rem;">
+                Instala la aplicación en tu dispositivo Android y comienza a gestionar tu negocio de manera eficiente.
+            </p>
+            
+            <a href="assets/registrasimple-v1.0.0.apk" class="download-button" download>
+                📥 Descargar APK
+            </a>
+            
+            <div style="margin-top: 1rem; color: #6B7280; font-size: 0.9rem;">
+                Archivo APK para instalación manual en Android
             </div>
         </div>
-    </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 RegistraSimple. Todos los derechos reservados.</p>
-            <p><a href="privacy-policy.html" style="color: #ecf0f1;">Política de Privacidad</a></p>
+        <div class="instructions">
+            <h3>📋 Instrucciones de Instalación</h3>
+            
+            <div class="step">
+                <div class="step-number">1</div>
+                <div>
+                    <strong>Habilita instalaciones de fuentes desconocidas</strong>
+                    <p>Ve a Ajustes → Seguridad → Habilitar "Fuentes desconocidas"</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <div>
+                    <strong>Descarga el archivo APK</strong>
+                    <p>Haz clic en el botón de descarga arriba para obtener el archivo de instalación</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <div>
+                    <strong>Instala la aplicación</strong>
+                    <p>Abre el archivo descargado y sigue las instrucciones de instalación</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">4</div>
+                <div>
+                    <strong>¡Listo para usar!</strong>
+                    <p>Abre la aplicación y comienza a gestionar tu negocio</p>
+                </div>
+            </div>
         </div>
-    </footer>
+
+        <div class="instructions">
+            <h3>⭐ Características Incluidas</h3>
+            <ul class="features-list">
+                <li>Gestión completa de pedidos y ventas</li>
+                <li>Registro de gastos e ingresos</li>
+                <li>Catálogo de productos ilimitado</li>
+                <li>Gestión de contactos y clientes</li>
+                <li>Calendario integrado para organización</li>
+                <li>Dashboard con análisis y estadísticas</li>
+                <li>Exportación de datos</li>
+                <li>Interfaz intuitiva y fácil de usar</li>
+            </ul>
+        </div>
+
+        <div class="instructions">
+            <h3>📞 Soporte y Feedback</h3>
+            <p>¿Tienes problemas con la instalación o encontraste un error?</p>
+            <p style="margin-top: 0.5rem;">
+                <strong>Email de soporte:</strong> registrasimple.soporte@gmail.com<br>
+                <strong>Versión:</strong> 1.0.0<br>
+                <strong>Compatibilidad:</strong> Android 8.0+
+            </p>
+        </div>
+
+        <footer class="footer">
+            <p>&copy; 2025 RegistraSimple. Versión Beta - Solo para pruebas.</p>
+            <a href="index.html" class="back-link">← Volver al Inicio</a>
+            <p style="margin-top: 1rem;">
+                <a href="privacy-policy.html" style="color: #1E3A8A; text-decoration: none;">Política de Privacidad</a>
+            </p>
+        </footer>
+    </div>
 </body>
 </html>
