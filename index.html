@@ -47,6 +47,31 @@
             margin-bottom: 2rem;
         }
         
+        .info-section {
+            text-align: center;
+            margin: 4rem 0;
+            padding: 3rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .info-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1E3A8A;
+            margin-bottom: 1rem;
+        }
+        
+        .info-text {
+            font-size: 1.125rem;
+            color: #6B7280;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -84,39 +109,6 @@
             color: #6B7280;
         }
         
-        .download-section {
-            text-align: center;
-            margin: 4rem 0;
-            padding: 3rem;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-        
-        .download-title {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #1E3A8A;
-            margin-bottom: 1rem;
-        }
-        
-        .download-button {
-            display: inline-block;
-            background: #1E3A8A;
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.125rem;
-            transition: background-color 0.2s;
-            margin: 0.5rem;
-        }
-        
-        .download-button:hover {
-            background: #1D4ED8;
-        }
-        
         .app-screenshots {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -128,12 +120,61 @@
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            background: #f8fafc;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6B7280;
+            font-size: 1.125rem;
         }
         
-        .screenshot img {
-            width: 100%;
-            height: auto;
-            display: block;
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .benefit-item {
+            text-align: center;
+            padding: 1.5rem;
+        }
+        
+        .benefit-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .benefit-title {
+            color: #1F2937;
+            margin-bottom: 0.5rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+        }
+        
+        .benefit-description {
+            color: #6B7280;
+        }
+        
+        .contact-info {
+            background: #1E3A8A;
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        .contact-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-email {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #EFF6FF;
         }
         
         .footer {
@@ -156,6 +197,11 @@
             .features-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .info-section {
+                padding: 2rem 1rem;
+                margin: 2rem 0;
+            }
         }
     </style>
 </head>
@@ -167,12 +213,23 @@
             <p class="subtitle">La aplicación móvil todo-en-uno para gestionar tu negocio de manera eficiente</p>
         </header>
 
-        <section class="download-section">
-            <h2 class="download-title">Descarga la App</h2>
-            <p>Disponible para dispositivos Android</p>
-            <div style="margin-top: 2rem;">
-                <a href="download.html" class="download-button">Descargar APK</a>
-                <a href="#features" class="download-button" style="background: #6B7280;">Ver Características</a>
+        <section class="info-section">
+            <h2 class="info-title">Aplicación Móvil</h2>
+            <p class="info-text">
+                RegistraSimple es una aplicación móvil diseñada específicamente para dispositivos Android 
+                que te ayuda a gestionar todos los aspectos de tu negocio en un solo lugar.
+            </p>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">⚡</div>
+                    <h3 class="benefit-title">Rendimiento Optimizado</h3>
+                    <p class="benefit-description">Diseñada para un uso fluido y eficiente</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🛡️</div>
+                    <h3 class="benefit-title">Seguridad Integrada</h3>
+                    <p class="benefit-description">Tus datos protegidos en tu dispositivo</p>
+                </div>
             </div>
         </section>
 
@@ -221,38 +278,39 @@
         <section style="margin: 4rem 0;">
             <h2 style="text-align: center; font-size: 2rem; margin-bottom: 2rem; color: #1F2937;">¿Por qué elegir RegistraSimple?</h2>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem;">
-                <div style="text-align: center; padding: 1.5rem;">
-                    <div style="font-size: 2rem; margin-bottom: 1rem;">🚀</div>
-                    <h3 style="color: #1F2937; margin-bottom: 0.5rem;">Rápido y Eficiente</h3>
-                    <p style="color: #6B7280;">Interfaz optimizada para un uso rápido y sin complicaciones.</p>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">🚀</div>
+                    <h3 class="benefit-title">Rápido y Eficiente</h3>
+                    <p class="benefit-description">Interfaz optimizada para un uso rápido y sin complicaciones.</p>
                 </div>
                 
-                <div style="text-align: center; padding: 1.5rem;">
-                    <div style="font-size: 2rem; margin-bottom: 1rem;">🔒</div>
-                    <h3 style="color: #1F2937; margin-bottom: 0.5rem;">Datos Locales</h3>
-                    <p style="color: #6B7280;">Tus datos se almacenan localmente en tu dispositivo para máxima privacidad.</p>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🔒</div>
+                    <h3 class="benefit-title">Datos Locales</h3>
+                    <p class="benefit-description">Tus datos se almacenan localmente en tu dispositivo para máxima privacidad.</p>
                 </div>
                 
-                <div style="text-align: center; padding: 1.5rem;">
-                    <div style="font-size: 2rem; margin-bottom: 1rem;">🛠️</div>
-                    <h3 style="color: #1F2937; margin-bottom: 0.5rem;">En Desarrollo Activo</h3>
-                    <p style="color: #6B7280;">Mejoras constantes basadas en feedback de usuarios reales.</p>
-                </div>
             </div>
         </section>
 
-        <div class="download-section">
-            <h2 class="download-title">¿Listo para comenzar?</h2>
-            <p style="margin-bottom: 2rem;">Descarga RegistraSimple ahora y transforma la manera en que gestionas tu negocio</p>
-            <a href="download.html" class="download-button">Descargar Ahora</a>
-        </div>
+        <section class="app-screenshots">
+            <div class="screenshot">
+                Captura de pantalla - Dashboard
+            </div>
+            <div class="screenshot">
+                Captura de pantalla - Pedidos
+            </div>
+            <div class="screenshot">
+                Captura de pantalla - Análisis
+            </div>
+            <div class="screenshot">
+                Captura de pantalla - Catálogo
+            </div>
+        </section>
 
         <footer class="footer">
             <p>&copy; 2025 RegistraSimple. Todos los derechos reservados.</p>
-            <p style="margin-top: 0.5rem;">
-                <a href="privacy-policy.html" style="color: #1E3A8A; text-decoration: none;">Política de Privacidad</a>
-            </p>
         </footer>
     </div>
 </body>
